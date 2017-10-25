@@ -14,6 +14,7 @@ namespace WeChatShop.weixin.Controllers
         ViveViewModel viewmode = new ViveViewModel();
         public ISortService SortService { get; set; }
         public IProductService ProductService { get; set; }
+        public IShopCartService ShopCartService { get; set; }
 
         /// <summary>
         /// 一级分类
@@ -66,14 +67,20 @@ namespace WeChatShop.weixin.Controllers
         /// 加入购物车
         /// </summary>
         /// <param name="proCode">商品Id</param>
-        /// <param name="Qty">要加入购物车的数量</param>
+        /// <param name="qty">要加入购物车的数量</param>
         /// <returns></returns>
-        public ActionResult JoinShopCart(string proCode, int Qty)
+        public ActionResult JoinShopCart(string proCode, int qty)
         {
-            int cusId = 3;
-            string aa = Request.Form["procode"].ToString();
-            string bb = Request.Form["qty"].ToString();
-            return Content(aa+bb);
+            int cusId = 3;//登陆的用户的id编号
+            ShoppingCart shoppingCart=new ShoppingCart();
+            shoppingCart.CusId = 3;
+            shoppingCart.ProCode = proCode;
+            shoppingCart.Qty = qty;
+
+
+           bool aa= ShopCartService.Add(shoppingCart);
+            string msg = aa ? "y" : "n";
+            return Json(new {msg});
         }
 
 

@@ -25,13 +25,13 @@ namespace WeChatShop.Repository
         }
         public void Delete(TEntity tEntity)
         {
-            _dbSet.Add(tEntity);
+            _dbSet.Attach(tEntity);
+            _dbSet.Remove(tEntity);
         }
 
         public void Insert(TEntity tEntity)
         {
-            _dbSet.Attach(tEntity);
-            _dbSet.Remove(tEntity);
+             _dbSet.Add(tEntity);
         }
         public void Update(TEntity tEntity)
         {

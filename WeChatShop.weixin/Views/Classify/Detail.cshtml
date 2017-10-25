@@ -326,24 +326,22 @@
 
 
 </script>
-
+<script src="/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
 <script>
     //加入购物车
     $(function() {
         $(".joinshopingcart").click(function () {
-            var qtys = document.getElementById("qtyqty").value;
-         
+           
             $.ajax({
                 url: '@Url.Action("JoinShopCart","Classify")',
-                type: 'post',
+                type: 'POST',
                 data: {
                     procode:@Model.Product.Code,
                     qty: document.getElementById("qtyqty").value
                     
                 },
-                dataType: "json",
-                success: function(res) {
-                    if (res.code === 200) {
+                success: function(msg) {
+                    if (msg === "y") {
                         alert("宝贝已经在购物车等着了！");
                     } else {
                         alert("加入购物车失败！");
