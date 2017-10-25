@@ -58,6 +58,7 @@ namespace WeChatShop.weixin.Controllers
         /// <returns></returns>
         public ActionResult NoAppraiseOrder()
         {
+            //这是个废弃的控制器
             return View();
         }
         /// <summary>
