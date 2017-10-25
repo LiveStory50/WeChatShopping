@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "_LayoutMaster.cshtml";
+}
+@section Style
+{
+    @RenderSection("Style",false)
+}
+@section Script
+{
+    @RenderSection("Script",false)
+}
+@RenderBody()
+<!--fixft开始-->
+<div class="fixft">
+    <a href="@Url.Action("Index","Home")" id="currtindex">
+        <span><img src="/Contents/images/navicon_45.png" class="img1"><img src="/Contents/images/navicon_28.png" class="img2"></span>
+        <i>首页</i>
+    </a>
+    <a href="@Url.Action("Index","Classify")" id="currttype">
+        <span><img src="/Contents/images/navicon_48.png" class="img1"><img src="/Contents/images/navicon_30.png" class="img2"></span>
+        <i>分类</i>
+    </a>
+    <a href="@Url.Action("ShopCartIndex","ShopCart")" id="currtshopping">
+        <span><img src="/Contents/images/navicon_50.png" class="img1"><img src="/Contents/images/navicon_32.png" class="img2"><em>12</em></span>
+        <i>购物车</i>
+    </a>
+    <a href="@Url.Action("CenterIndex","PersonCenter")" id="currtcenter">
+        <span><img src="/Contents/images/navicon_42.png" class="img1"><img src="/Contents/images/navicon_35.png" class="img2"></span>
+        <i>我的</i>
+    </a>
+    <script>
+        $(function () {
+            switch (switchs) {
+            case 1:
+                    document.getElementById('currtindex').setAttribute("class", "current");
+                    break;
+            case 2:
+                    document.getElementById('currttype').setAttribute("class", "current");
+                    break;
+            case 3:
+                document.getElementById('currtshopping').setAttribute("class", "current");
+                break;
+            case 4:
+                document.getElementById('currtcenter').setAttribute("class", "current");
+                    break;
+            }
+            
+        })
+      
+    </script>
+</div>
+<!--fixft结束-->

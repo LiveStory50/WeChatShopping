@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5、DAL数据层", "5、DAL数据层", "{2704EC8C-6CEE-44FF-98B5-C18254B67F8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3、BLL业务层", "3、BLL业务层", "{F4D91EBC-A85E-451E-96F1-1712DBEE8E96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1、UI表现层", "1、UI表现层", "{BBD844C8-F585-4210-A2A8-FF3BEBFF4BE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2、IBLL业务接口层", "2、IBLL业务接口层", "{6832EB00-FEFA-4871-942E-755624A206EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4、IDAL数据接口层", "4、IDAL数据接口层", "{CE1116DA-5891-4860-942B-9ABA44C34659}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6、Model", "6、Model", "{84B96F59-9258-459E-9862-5E735EB4FEBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChatShop.IService", "WeChatShop.IService\WeChatShop.IService.csproj", "{CB9C24AF-B527-41E7-8B09-A5F581062DF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChatShop.Service", "WeChatShop.Service\WeChatShop.Service.csproj", "{74664738-09A2-4E3C-AD19-4B3971347A81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChatShop.IRepository", "WeChatShop.IRepository\WeChatShop.IRepository.csproj", "{A21BCE11-9D31-4AD9-9F7C-6D5B2C9CF64C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChatShop.Repository", "WeChatShop.Repository\WeChatShop.Repository.csproj", "{3C53F2B3-6B0E-4F31-BFD2-3E70BF5968DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeShop.EFModel", "WeShop.EFModel\WeShop.EFModel.csproj", "{D50F2375-FA21-43C8-93A8-44BEF2290503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChatShop.weixin", "WeChatShop.weixin\WeChatShop.weixin.csproj", "{241C13FD-5188-4B15-87CB-DE491E932C69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB9C24AF-B527-41E7-8B09-A5F581062DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB9C24AF-B527-41E7-8B09-A5F581062DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB9C24AF-B527-41E7-8B09-A5F581062DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB9C24AF-B527-41E7-8B09-A5F581062DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74664738-09A2-4E3C-AD19-4B3971347A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74664738-09A2-4E3C-AD19-4B3971347A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74664738-09A2-4E3C-AD19-4B3971347A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74664738-09A2-4E3C-AD19-4B3971347A81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A21BCE11-9D31-4AD9-9F7C-6D5B2C9CF64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A21BCE11-9D31-4AD9-9F7C-6D5B2C9CF64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A21BCE11-9D31-4AD9-9F7C-6D5B2C9CF64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A21BCE11-9D31-4AD9-9F7C-6D5B2C9CF64C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C53F2B3-6B0E-4F31-BFD2-3E70BF5968DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C53F2B3-6B0E-4F31-BFD2-3E70BF5968DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C53F2B3-6B0E-4F31-BFD2-3E70BF5968DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C53F2B3-6B0E-4F31-BFD2-3E70BF5968DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D50F2375-FA21-43C8-93A8-44BEF2290503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D50F2375-FA21-43C8-93A8-44BEF2290503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D50F2375-FA21-43C8-93A8-44BEF2290503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D50F2375-FA21-43C8-93A8-44BEF2290503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241C13FD-5188-4B15-87CB-DE491E932C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241C13FD-5188-4B15-87CB-DE491E932C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241C13FD-5188-4B15-87CB-DE491E932C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241C13FD-5188-4B15-87CB-DE491E932C69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CB9C24AF-B527-41E7-8B09-A5F581062DF5} = {6832EB00-FEFA-4871-942E-755624A206EB}
+		{74664738-09A2-4E3C-AD19-4B3971347A81} = {F4D91EBC-A85E-451E-96F1-1712DBEE8E96}
+		{A21BCE11-9D31-4AD9-9F7C-6D5B2C9CF64C} = {CE1116DA-5891-4860-942B-9ABA44C34659}
+		{3C53F2B3-6B0E-4F31-BFD2-3E70BF5968DD} = {2704EC8C-6CEE-44FF-98B5-C18254B67F8F}
+		{D50F2375-FA21-43C8-93A8-44BEF2290503} = {84B96F59-9258-459E-9862-5E735EB4FEBA}
+		{241C13FD-5188-4B15-87CB-DE491E932C69} = {BBD844C8-F585-4210-A2A8-FF3BEBFF4BE6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26098932-F4B2-42C0-A2E2-6957901EC98F}
+	EndGlobalSection
+EndGlobal
