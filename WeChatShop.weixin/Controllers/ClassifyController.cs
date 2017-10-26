@@ -71,14 +71,27 @@ namespace WeChatShop.weixin.Controllers
         /// <returns></returns>
         public ActionResult JoinShopCart(string proCode, int qty)
         {
+   
+            //判断数据库是否存在该条数据
+           var pro = ShopCartService.GetEntity(r => r.CusId == 3 && r.ProCode == proCode);
+          // 
+            bool aa;
+            if (pro == null)
+            {
+                ShoppingCart shoppingCart = new ShoppingCart();
+                shoppingCart.CusId = 3; //登陆的用户的id编号
+                shoppingCart.ProCode = proCode;
+                shoppingCart.Qty = qty;
+                aa= ShopCartService.Add(shoppingCart);
+            }
+            else
+            {
+                pro.Qty+=qty;
+                aa = ShopCartService.Modify(pro);
+            }
            
-            ShoppingCart shoppingCart=new ShoppingCart();
-            shoppingCart.CusId = 3; //登陆的用户的id编号
-            shoppingCart.ProCode = proCode;
-            shoppingCart.Qty = qty;
 
-
-           bool aa= ShopCartService.Add(shoppingCart);
+          
             var msg = aa ? 1 : 0;
             return Json(new {msg});
         }

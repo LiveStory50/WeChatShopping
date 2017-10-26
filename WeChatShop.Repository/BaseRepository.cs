@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using WeChatShop.IRepository;
+using WeChatShop.weixin.Models;
 using WeShop.EFModel;
 
 namespace WeChatShop.Repository
@@ -78,9 +81,28 @@ namespace WeChatShop.Repository
             return result; 
         }
 
-      
+        public string sp_joinshopcart(ViveViewModel viewModel)
+        {
+            
+            SqlParameter msg = new SqlParameter
+            {
+                ParameterName = "@msg",
+                Direction = ParameterDirection.Output,
+                Size = 50,
+                SqlDbType = SqlDbType.NVarChar
+            };
+
+        SqlParameter[] sqlpar =
+        {
+                new SqlParameter("@id",viewModel),
+                new SqlParameter("@qq",viewModel)
+
+            };
+        _dbContext.Database.ExecuteSqlCommand("exec sp_joinshopcart", sqlpar);
+            return msg.Value.ToString();
+        }
 
 
-    
-    }
+
+}
 }

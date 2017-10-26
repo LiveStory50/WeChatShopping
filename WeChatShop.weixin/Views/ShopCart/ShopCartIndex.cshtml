@@ -44,7 +44,16 @@
                         <a href="product_xq.html">@shop.Product.Name</a>
                        
                         <div class="shu">
-                            <span class="jian"><img src="/Contents/images/icon_016.png"></span><input class="shopcart-td-num" type="text" value="@shop.Qty"/><span class="jia"><img src="/Contents/images/icon_017.png"></span><a><i>￥</i><b>@shop.Product.SellPrice</b></a>
+                            <span class="jia">
+                                <a href="@Url.Action("UpOrDown", "ShopCart",new {proCode=shop.ProCode,qty=shop.Qty==0?1:shop.Qty-1})">
+                                    <img src="/Contents/images/icon_016.png">
+                                </a>
+                            </span><input class="shopcart-td-num" type="text" value="@shop.Qty"/>
+                            <span class="jian">
+                                <a href="@Url.Action("UpOrDown", "ShopCart",new {proCode=shop.ProCode,qty=shop.Qty+1})">
+                                    <img src="/Contents/images/icon_017.png">
+                                </a>
+                            </span><a><i>￥</i><b>@shop.Product.SellPrice</b></a>
                         </div>
                     </div>
                     <img class="delete" src="/Contents/images/icon_030.png">
@@ -77,32 +86,55 @@
         </div>
     </div>
 
+
+
     <script>
-        $(function() {
-            var jian = $(".jian");
+        $(function () {
+
+        
+
+
+
+
+            @*var jian = $(".jian");
             var jia = $(".jia");
             var kunchun = 10; //当库存不足时，可以提醒用户。
-            jia.click(function() {
-                var n = $(this).siblings("input").val();
-                n++;
-                if (n > kunchun) {
-                    alert("库存不足啦!");
-                    $(this).siblings("input").val(kunchun - 1);
-                    return false;
-                }
-                $(this).siblings("input").val(n)
-                return false;
-            });
             jian.click(function() {
                 var n = $(this).siblings("input").val();
-                n--;
-                if (n < 1) {
-                    $(this).siblings("input").val(n + 1);
-                    return false;
-                }
-                $(this).siblings("input").val(n)
-                return false
-            })
+                $.ajax({
+                    url: @Url.Action("UpOrDown", "ShopCart"),
+                    type: 'POST',
+                    data: {
+                       
+                        qty: n
+
+                    },
+                    success: function(msg) {
+                        alert(msg = 1 ? "宝贝已经在购物车等着了！" : "加入购物车失败！");
+
+                    }
+
+
+                });*@
+                //n++;
+                //if (n > kunchun) {
+                //    alert("库存不足啦!");
+                //    $(this).siblings("input").val(kunchun - 1);
+                //    return false;
+                //}
+                //$(this).siblings("input").val(n)
+                //return false;
+           
+            //jian.click(function() {
+            //    var n = $(this).siblings("input").val();
+            //    n--;
+            //    if (n < 1) {
+            //        $(this).siblings("input").val(n + 1);
+            //        return false;
+            //    }
+            //    $(this).siblings("input").val(n)
+            //    return false
+            //})
 
             $("label input").click(function() {
                 $(this).parent().toggleClass("on");

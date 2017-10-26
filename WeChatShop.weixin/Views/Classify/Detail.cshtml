@@ -64,7 +64,7 @@
                     }
 
                 </h3>
-                <p><span>库存：@*@Model.Product.Stocks.FirstOrDefault(r=>true).Qty*@ </span><i></i><span>月销量：1988笔</span></p>
+                <p><span>库存：@Model.Product.Stocks.FirstOrDefault(r=>r.ProCode==Model.Product.Code).Qty </span><i></i><span>月销量：1988笔</span></p>
             </div>
         </div>
     </div>

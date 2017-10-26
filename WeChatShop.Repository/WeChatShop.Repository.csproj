@@ -61,6 +61,10 @@
       <Project>{a21bce11-9d31-4ad9-9f7c-6d5b2c9cf64c}</Project>
       <Name>WeChatShop.IRepository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WeChatShop.weixin\WeChatShop.weixin.csproj">
+      <Project>{241c13fd-5188-4b15-87cb-de491e932c69}</Project>
+      <Name>WeChatShop.weixin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WeShop.EFModel\WeShop.EFModel.csproj">
       <Project>{d50f2375-fa21-43c8-93a8-44bef2290503}</Project>
       <Name>WeShop.EFModel</Name>

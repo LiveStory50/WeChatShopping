@@ -19,19 +19,29 @@ namespace WeChatShop.weixin.Controllers
         /// <returns></returns>
         public ActionResult ShopCartIndex()
         {
-            try
-            {
-                
-                viewModel.ShoppingCarts = ShopCartService.GetEntities(r => r.CusId == 3);
+           viewModel.ShoppingCarts = ShopCartService.GetEntities(r => r.CusId == 3);
+                if (viewModel.ShoppingCarts.Count()==0)
+                {
+                    ViewBag.gudge = 1;
+                    return View();
+                }
                 ViewBag.gudge = 0;
+
+
                 return View(viewModel);
-            }
-            catch 
-            {
-                ViewBag.gudge = 1;
-                return View();
-            }
-             
+        }
+        /// <summary>
+        /// 购物车中的加减对所购买商品的数量进行修改数据库中的数据
+        /// </summary>
+        /// <param name="proCode">商品编号</param>
+        /// <param name="qty">购物车中要购买的商品的数量</param>
+        /// <returns></returns>
+        public ActionResult UpOrDown(string proCode, int qty)
+        {
+            var pro = ShopCartService.GetEntity(r => r.CusId == 3 && r.ProCode == proCode);
+            pro.Qty = qty;
+           bool aa= ShopCartService.Modify(pro);
+            return RedirectToAction("ShopCartIndex");
         }
     }
 }
