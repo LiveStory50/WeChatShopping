@@ -21,6 +21,7 @@ namespace WeShop.EFModel
 
         public int Qty { get; set; }
 
+        [Column(TypeName = "datetime2")]
         public DateTime CreateTime { get; set; }
 
         public virtual Customer Customer { get; set; }

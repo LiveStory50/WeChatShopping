@@ -65,7 +65,6 @@
     <Compile Include="ShoppingCart.cs" />
     <Compile Include="Sort.cs" />
     <Compile Include="Stock.cs" />
-    <Compile Include="sysdiagram.cs" />
     <Compile Include="SystemConfig.cs" />
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />

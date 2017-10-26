@@ -340,12 +340,9 @@
                     qty: document.getElementById("qtyqty").value
                     
                 },
-                success: function(msg) {
-                    if (msg === "y") {
-                        alert("宝贝已经在购物车等着了！");
-                    } else {
-                        alert("加入购物车失败！");
-                    }
+                success: function (msg) {
+                    alert(msg = 1 ? "宝贝已经在购物车等着了！" : "加入购物车失败！");   
+                 
                 }
 
             });

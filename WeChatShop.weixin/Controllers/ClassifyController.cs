@@ -71,15 +71,15 @@ namespace WeChatShop.weixin.Controllers
         /// <returns></returns>
         public ActionResult JoinShopCart(string proCode, int qty)
         {
-            int cusId = 3;//登陆的用户的id编号
+           
             ShoppingCart shoppingCart=new ShoppingCart();
-            shoppingCart.CusId = 3;
+            shoppingCart.CusId = 3; //登陆的用户的id编号
             shoppingCart.ProCode = proCode;
             shoppingCart.Qty = qty;
 
 
            bool aa= ShopCartService.Add(shoppingCart);
-            string msg = aa ? "y" : "n";
+            var msg = aa ? 1 : 0;
             return Json(new {msg});
         }
 

@@ -23,15 +23,13 @@ namespace WeShop.EFModel
         [StringLength(10)]
         public string OpenId { get; set; }
 
-        [Required]
-        [StringLength(10)]
-        public string Phone { get; set; }
+        public int Phone { get; set; }
 
         [Required]
         [StringLength(500)]
         public string Address { get; set; }
 
-        public DateTime CreateTime { get; set; }
+        public DateTime? CreateTime { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderBillFath> OrderBillFaths { get; set; }

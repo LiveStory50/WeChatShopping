@@ -26,7 +26,6 @@ namespace WeShop.EFModel
         public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<Sort> Sorts { get; set; }
         public virtual DbSet<Stock> Stocks { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -47,10 +46,6 @@ namespace WeShop.EFModel
 
             modelBuilder.Entity<Customer>()
                 .Property(e => e.OpenId)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Customer>()
-                .Property(e => e.Phone)
                 .IsFixedLength();
 
             modelBuilder.Entity<Customer>()
